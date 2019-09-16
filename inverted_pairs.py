@@ -1,5 +1,12 @@
-class Solution1:
+""" 题目
+在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。
+输入一个数组,求出这个数组中的逆序对的总数P。并将P对1000000007取模的结果输出。 即输出P%1000000007
+"""
+
+class Solution0:
     def quick_search(self, ordered_list, value):
+        # 利用快排寻找value元素的位置
+        # 此方法超时
         if len(ordered_list) == 0:
             return 0
         
@@ -28,8 +35,10 @@ class Solution1:
             ipairs += pos + 1
         return ipairs % 1000000007
 
-class Solution:
+class Solution1:
     def MergeSort(self, data):
+        # 利用mergesort，求得逆序对的数目
+        # 逆序对的数目等于数字移动steps数的一半（即向后移动步数/向前移动步数）
         # ascend sort
         if len(data) <= 1:
             return data, 0
@@ -65,5 +74,5 @@ class Solution:
 
 if __name__ == '__main__':
     a_list = [1,2,3,4,5,6,7,0]
-    s = Solution()
+    s = Solution1()
     print(s.InversePairs(a_list))

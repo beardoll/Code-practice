@@ -1,3 +1,7 @@
+"""
+排序算法测试
+"""
+
 def fast_sort(unordered_list):
     if len(unordered_list) <= 1:
         return unordered_list
